@@ -1,5 +1,12 @@
 import java.sql.*;
 import java.util.*;
+import java.awt.*;
+import java.awt.geom.*;
+
+
+import javax.swing.*;
+
+import graph.JGraphAdaptor;
 
 public class MainClass {
 
@@ -85,6 +92,19 @@ public class MainClass {
 		}
 
 		sc.close();
+
+		JGraphAdaptor graph = new JGraphAdaptor();
+		graph.init();
+
+		JFrame frame = new JFrame();
+        frame.getContentPane().add(graph);
+        frame.setTitle("JGraphT Adapter to JGraph Demo");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+		
+
+
 	}
 
 	public static String getAuthorName(Connection conn, int authorid){
